@@ -200,17 +200,18 @@ def compute_iae(psd, truepsd,n):
 
 if True:
     np.random.seed(10)
-    ndays=20
-    dire = f'/home/naim769/oneMonth/pcode/first/LISA/blocked/Guilliume/{ndays}days'
-    T_per, T, f, std_T, spar= datainput(dire)
-
+    ndays=183
+    dire = f'/home/naim769/oneMonth/pcode/first/LISA/blocked/simul/{ndays}days'
+    T_per, T, f, std_T, _= datainput(dire)
+    outdir= f'{dire}/nopar'
+    if not os.path.exists(outdir):
+        os.makedirs(outdir)
     myobj,ci_spl, ci_npsdT,iae=run_mcmc_and_summarise(
-        out_dir=dire,
+        out_dir=outdir,
         f=f,
         per=T_per,
-        spar=spar/(std_T) ** 2,
-        n=10000,
-        burnin=5000,
+        n=15000,
+        burnin=10000,
         n_weights=15,
         blocked=True,
         tpsd=T)
@@ -219,9 +220,8 @@ if True:
                          per=T_per[0],
                          ci_npsd=ci_npsdT,
                          myobj=myobj,
-                         out_dir= dire,
+                         out_dir= outdir,
                          ci_spl=ci_spl,
-                         spar=spar/(std_T) ** 2,
                          tpsd= T/(std_T) ** 2,
                          dpi=300,
                          ytick_step=1e-3,
