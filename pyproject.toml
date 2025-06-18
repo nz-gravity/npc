@@ -1,0 +1,123 @@
+[build-system]
+requires = [
+    "setuptools>=64",
+    "setuptools-scm>=8.0",
+    "wheel"
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "npc"
+dynamic = ["version"]  # Version will be determined by SCM tags
+requires-python = ">=3.11"
+description = "Bayesian Nonparametric Corrector for correction to a parametric model for PSD estimation"
+readme = "README.md"
+authors = [
+    { name = "Nazeela Aimen", email = "naim769@aucklanduni.ac.nz" },
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "numpy",
+    "scipy==1.14.0",
+    "matplotlib",
+    "pytest",
+    "pandas",
+    "scikit-fda @ git+https://github.com/GAA-UAM/scikit-fda.git@develop",
+    "seaborn",
+    "bilby"
+]
+
+[project.optional-dependencies]
+dev = [
+    "flake8",
+    "black",
+    "isort",
+    "mypy",
+    "pytest-cov",
+    "pre-commit"
+]
+
+[project.urls]
+Homepage = "https://github.com/NazeelaAimen/npc"
+"Bug Reports" = "https://github.com/NazeelaAimen/npc/issues"
+Source = "https://github.com/NazeelaAimen/npc"
+
+[tool.setuptools_scm]
+write_to = "src/npc/_version.py"
+
+[tool.semantic_release]
+version_variable = "src/npc/_version.py:__version__"
+
+version_source = "commit"
+commit_version_number = true
+commit_subject = "chore(release): {version}"
+commit_message = "chore(release): {version}"
+tag_format = "v{version}"
+no_local_version = true
+
+[tool.semantic_release.changelog]
+changelog_file = "CHANGELOG.md"
+
+[tool.setuptools]
+package-data = { "npc" = [""] }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.black]
+line-length = 79
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
+line_length = 79
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.coverage.run]
+branch = true
+source = [
+    "npc"
+]
+
+[tool.coverage.paths]
+source = [
+    "src/npc",
+    "**/site-packages/npc"
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if self.debug",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if 0:",
+    "if __name__ == .__main__.:"
+]
+ignore_errors = true
+
+[tool.coverage.html]
+title = "npc Coverage Test Report"
+
+[[tool.mypy.overrides]]
+module = "matplotlib.*,scipy.*,numba.*,bilby.*"
+ignore_missing_imports = true

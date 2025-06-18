@@ -1,0 +1,16 @@
+numpy
+scipy==1.14.0
+matplotlib
+pytest
+pandas
+scikit-fda@ git+https://github.com/GAA-UAM/scikit-fda.git@develop
+seaborn
+bilby
+
+[dev]
+flake8
+black
+isort
+mypy
+pytest-cov
+pre-commit
