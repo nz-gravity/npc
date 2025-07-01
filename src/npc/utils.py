@@ -47,8 +47,8 @@ def cent_series(series):
     return ((series - np.mean(series)) / np.std(series))
 
 
-def compute_iae(psd, truepsd, n):  # note use PSD not log PSD
-    return sum(abs(psd - truepsd)) * 2 * np.pi / n
+def compute_iae(psd, truepsd, upper, lower):  # note use PSD not log PSD
+    return sum(abs(psd - truepsd)) * (upper-lower) / len(truepsd)
 
 
 def compute_prop(u05, u95, truepsd):
