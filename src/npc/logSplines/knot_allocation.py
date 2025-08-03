@@ -197,12 +197,12 @@ def knot_loc(
     if equidistant:
         return np.geomspace(min(f), max(f), num=int(n_knots - 2))
     n_knots = n_knots - degree + 1
-    data = Spar - pdgrm  # difference between periodogram and parametric model
+    data = pdgrm - Spar  # difference between periodogram and parametric model
     data = (
         data - min(data) + 1e-9
     )  # translating so that it is positive and does not lose any variation
     if log_data:
-        data = np.log(Spar) - np.log(pdgrm)
+        data = np.log(pdgrm) - np.log(Spar)
     if data_bin_edges is None:
         return (
             m * data_peak_knots(data=data, n_knots=n_knots, log_data=log_data)
