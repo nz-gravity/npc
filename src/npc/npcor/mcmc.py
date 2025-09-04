@@ -1,6 +1,7 @@
 import numpy as np
 
 from .sampler import MCMCResult, Sampler
+from .input_test import input_test
 
 """
 This file contains the function that runs the MCMC.
@@ -20,14 +21,22 @@ def mcmc(
         data_bin_edges: np.ndarray = None,
         data_bin_weights: np.ndarray = None,
         log_data: bool = False,
-        equidistant: bool = True,
+        equidistant: bool = False,
+        thin: int = 1,
 ):
     """
     Function that:
-      1) Initiates the sampler class,
-      2) Runs MCMCloop(),
-      3) Returns the results.
+      1) Validates the inputs,
+      2) Initiates the sampler class,
+      3) Runs MCMCloop(),
+      4) Returns the results.
     """
+    input_test(
+        per=per, n=n, n_weights=n_weights, burnin=burnin, Spar=Spar, degree=degree,
+        f=f, fs=fs, blocked=blocked, data_bin_edges=data_bin_edges,
+        data_bin_weights=data_bin_weights, log_data=log_data,
+        equidistant=equidistant, thin=thin,
+    )
     sampler = Sampler(
         per=per,
         n=n,
@@ -42,6 +51,7 @@ def mcmc(
         data_bin_weights=data_bin_weights,
         log_data=log_data,
         equidistant=equidistant,
+        thin=thin,
     )
     sampler.MCMCloop()
     return MCMCResult(sampler=sampler)

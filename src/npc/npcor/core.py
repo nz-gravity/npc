@@ -98,10 +98,10 @@ def loglike(pdgrm, logpsd):
 
 
 def llike_cal(obj, npsdT):
-    lnlike = loglike(pdgrm=obj.per, logpsd=npsdT[obj.mask])
+    lnlike = loglike(pdgrm=obj.per[obj.mask], logpsd=npsdT[obj.mask])
     if np.isnan(lnlike):
         raise ValueError("log likelihood is nan")
-    return lnlike
+    return obj.J*lnlike
 
 def logpost(loglike, logpri):
     return loglike + logpri
@@ -109,6 +109,7 @@ def logpost(loglike, logpri):
 
 def post_calc(obj,lam,i):
     #function to calculate the posterior
+    #sp_psd_T, npsdT = log_noise_psd(lam=lam, splines=obj.splineobj.splines.T, Spar=obj.Spar[i,:])
     sp_psd_T, npsdT = log_noise_psd(lam=lam, splines=obj.splineobj.splines.T, Spar=obj.Spar)
     loglikelihood = llike_cal(obj, npsdT=npsdT)
     logpriorsum=prior_sum(lam=lam, phi=obj.splineobj.phi[i], delta=obj.splineobj.delta[i], P=obj.splineobj.P, k=obj.n_weights)

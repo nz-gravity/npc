@@ -22,8 +22,12 @@ class Sampler:
             data_bin_weights: np.ndarray,
             log_data: bool,
             equidistant: bool,
+            thin: int = 1,
     ):
+        self.per=np.mean(per, axis=0) if blocked else per
+        self.J = per.shape[0] if blocked else 1
         self.n = n
+        self.thin = thin
         self.n_weights = n_weights
         self.burnin = burnin
         self.Spar = Spar
@@ -36,11 +40,10 @@ class Sampler:
         self.equidistant = equidistant
 
         if f is None:
-            f = np.linspace(0, self.fs / 2, len(per + 1))[1:]
+            f = np.linspace(0, self.fs / 2, len(self.per) + 1)[1:]
         self.f = f
-        pdgrm = per[0] if blocked else per
         dataobj_x = LogSplineData(
-            data=pdgrm,
+            data=self.per,
             Spar=self.Spar,
             n=self.n,
             n_knots=self.n_weights,
@@ -58,15 +61,14 @@ class Sampler:
         self.splineobj.n_gridpoints, self.splineobj.n_basis = self.splineobj.splines.shape
         self.splineobj.sigma = 1
         self.splineobj.accept_frac = 0.4
-        self.npsd = np.zeros((n, len(pdgrm)))  # noise PSD T channel
+        self.npsd = np.zeros((n, len(self.per)))  # noise PSD T channel
         self.loglikelihood = np.zeros(n)
         self.logpost = np.zeros(n)
         self.logpriorsum = np.zeros(n)
-        bFreq = [0, len(pdgrm) - 1]  # Remove the first and last elements
-        mask = np.ones(len(pdgrm), dtype=bool)
+        bFreq = [0, len(self.per) - 1]  # Remove the first and last elements
+        mask = np.ones(len(self.per), dtype=bool)
         mask[bFreq] = False
         self.mask=mask
-        self.per= per[:,mask] if blocked else per[mask] #removing the first and last elements for loglikelihood calculation
         self.splineobj.splines_mat[0, :], self.npsd[0, :], self.loglikelihood[0], self.logpriorsum[0], self.logpost[
             0] = post_calc(
             self, lam=self.splineobj.lam_mat[0, :], i=0)
@@ -95,7 +97,8 @@ class MCMCResult:
         self.n = sampler.n
         self.n_weights = sampler.n_weights
         self.blocked = sampler.blocked
-        cond = slice(self.burnin, self.n)
+        self.thin=sampler.thin
+        cond = slice(self.burnin, self.n, self.thin)
 
         self.phi = sampler.splineobj.phi[cond]
         self.delta = sampler.splineobj.delta[cond]
@@ -111,6 +114,8 @@ class MCMCResult:
         self.lambda_matrix = sampler.splineobj.lam_mat[cond, :]
 
         self.knots = sampler.splineobj.knots
+        self.iter_ix = np.arange(self.burnin, self.n)[::self.thin]#the iterations after burn-in and thinning
+        self.n_kept = len(self.iter_ix)#Number of posterior samples kept after burn-in and thinning
 
 
 

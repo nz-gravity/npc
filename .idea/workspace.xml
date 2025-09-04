@@ -5,10 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a687f44c-982c-410c-adbf-fa2a6a969575" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/LISA_simul_result.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/tests/LISA_simul_result.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/simul_lisa_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/simul_lisa_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/npc.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/npc-0.1.dev0+d20250617-py3-none-any.whl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/npc-0.1.dev0+d20250617.tar.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/npc.egg-info/PKG-INFO" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/npc.egg-info/SOURCES.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/npc.egg-info/dependency_links.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/npc.egg-info/requires.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/npc.egg-info/top_level.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/npc/_version.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/npc/logSplines/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/npc/logSplines/knot_allocation.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/npc/logSplines/log_Psplines.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/npc/logSplines/logspline_data.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/npc/logSplines/utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/npc/npcor/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/npc/npcor/core.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/npc/npcor/input_test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/npc/npcor/mcmc.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/npc/npcor/sampler.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/npc/npcor/update_weights.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/npc/utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_core_fun.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_splines.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +45,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="Jupyter Notebook" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -49,9 +76,18 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python tests.Python tests in test_core_fun.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_splines.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ar4posttest.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.ddpc.executor&quot;: &quot;Run&quot;,
+    &quot;Python.iae_plot.executor&quot;: &quot;Run&quot;,
+    &quot;Python.knot_all_test.executor&quot;: &quot;Run&quot;,
     &quot;Python.logspline_data.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.lvk.executor&quot;: &quot;Debug&quot;,
     &quot;Python.simul_lisa_test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.simulationstudy.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -65,8 +101,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-b26f3e71634d-JavaScript-PY-251.26094.141" />
-        <option value="bundled-python-sdk-9f8e2b94138c-36ea0e71a18c-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.26094.141" />
+        <option value="bundled-js-predefined-d6986cc7102b-b598e85cdad2-JavaScript-PY-252.25557.130" />
+        <option value="bundled-python-sdk-1bde30d8e611-7b97d883f26b-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.25557.130" />
       </set>
     </attachedChunks>
   </component>
@@ -84,15 +120,94 @@
       <workItem from="1750201400364" duration="864000" />
       <workItem from="1750202367355" duration="1333000" />
       <workItem from="1750205424163" duration="880000" />
-      <workItem from="1750206315488" duration="761000" />
+      <workItem from="1750206315488" duration="2950000" />
+      <workItem from="1750209296533" duration="2733000" />
+      <workItem from="1750219649776" duration="1697000" />
+      <workItem from="1750222082293" duration="334000" />
+      <workItem from="1750227430084" duration="4064000" />
+      <workItem from="1750245673077" duration="3137000" />
+      <workItem from="1750304943273" duration="5075000" />
+      <workItem from="1750489319449" duration="7031000" />
+      <workItem from="1750603823311" duration="13302000" />
+      <workItem from="1750634373693" duration="9657000" />
+      <workItem from="1750724164568" duration="12298000" />
+      <workItem from="1751253381976" duration="5464000" />
+      <workItem from="1751337456076" duration="193000" />
+      <workItem from="1751338711676" duration="594000" />
+      <workItem from="1751339644285" duration="349000" />
+      <workItem from="1751340535590" duration="22211000" />
+      <workItem from="1751380988042" duration="942000" />
+      <workItem from="1751382790114" duration="479000" />
+      <workItem from="1751410078838" duration="7350000" />
+      <workItem from="1751434688744" duration="3278000" />
+      <workItem from="1751511457416" duration="9701000" />
+      <workItem from="1751526027986" duration="14091000" />
+      <workItem from="1751575934043" duration="18513000" />
+      <workItem from="1752030038794" duration="4165000" />
+      <workItem from="1752182586737" duration="4853000" />
+      <workItem from="1752495196544" duration="302000" />
+      <workItem from="1752616215455" duration="761000" />
+      <workItem from="1752786161553" duration="4472000" />
+      <workItem from="1753231127771" duration="2507000" />
+      <workItem from="1753229451584" duration="10159000" />
+      <workItem from="1753239943919" duration="7151000" />
+      <workItem from="1753251163319" duration="11986000" />
+      <workItem from="1753771597006" duration="10604000" />
+      <workItem from="1754195049911" duration="2327000" />
+      <workItem from="1754447336417" duration="21373000" />
+      <workItem from="1754647478112" duration="15348000" />
+      <workItem from="1755052280417" duration="3651000" />
+      <workItem from="1755129536197" duration="25330000" />
+      <workItem from="1755547523271" duration="6952000" />
+      <workItem from="1755578797267" duration="5213000" />
+      <workItem from="1755584086362" duration="1452000" />
+      <workItem from="1755804112207" duration="828000" />
+      <workItem from="1755805018412" duration="3488000" />
+      <workItem from="1755808529637" duration="6514000" />
+      <workItem from="1755845106692" duration="1370000" />
+      <workItem from="1755846536449" duration="28872000" />
+      <workItem from="1756432500518" duration="6362000" />
+      <workItem from="1756613356095" duration="3416000" />
+      <workItem from="1756634883959" duration="14736000" />
+      <workItem from="1756659459072" duration="364000" />
+      <workItem from="1756659899349" duration="2718000" />
+      <workItem from="1756701503282" duration="4639000" />
+      <workItem from="1756708841455" duration="699000" />
+      <workItem from="1756715201285" duration="2946000" />
+      <workItem from="1756720150906" duration="844000" />
+      <workItem from="1756772362903" duration="1279000" />
+      <workItem from="1756774007983" duration="1155000" />
+      <workItem from="1756775707306" duration="1401000" />
+      <workItem from="1756783729458" duration="4920000" />
+      <workItem from="1756788695359" duration="7443000" />
+      <workItem from="1756958403415" duration="1532000" />
+      <workItem from="1756960457000" duration="400000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/tests/ar4posttest.py</url>
+          <line>33</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/npc$simul_lisa_test.coverage" NAME="simul_lisa_test Coverage Results" MODIFIED="1756662538732" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/npc$iae_plot.coverage" NAME="iae_plot Coverage Results" MODIFIED="1754447822673" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/npc$knot_all_test.coverage" NAME="knot_all_test Coverage Results" MODIFIED="1756797407244" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/npc$ar4posttest.coverage" NAME="ar4posttest Coverage Results" MODIFIED="1753251329661" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/npc$logspline_data.coverage" NAME="logspline_data Coverage Results" MODIFIED="1750205869142" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/npc/logSplines" />
-    <SUITE FILE_PATH="coverage/npc$simul_lisa_test.coverage" NAME="simul_lisa_test Coverage Results" MODIFIED="1750206317942" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/npc$lvk.coverage" NAME="lvk Coverage Results" MODIFIED="1752184883079" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/npc$simulationstudy.coverage" NAME="simulationstudy Coverage Results" MODIFIED="1751410139496" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/npc$.coverage" NAME=" Coverage Results" MODIFIED="1750207753990" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/npc$ddpc.coverage" NAME="ddpc Coverage Results" MODIFIED="1756642065774" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/oneMonth/pcode" />
   </component>
 </project>
