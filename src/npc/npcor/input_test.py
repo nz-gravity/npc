@@ -42,6 +42,7 @@ def input_test(
     log_data,
     equidistant,
     thin,
+    amh,
 ):
     """
     Validate inputs for the MCMC.
@@ -123,6 +124,8 @@ def input_test(
         raise ValueError(f"`log_data` must be boolean, got {type(log_data)}.")
     if not _is_bool(equidistant):
         raise ValueError(f"`equidistant` must be boolean, got {type(equidistant)}.")
+    if not _is_bool(amh):
+        raise ValueError(f"`amh` must be boolean, got {type(amh)}.")
 
     # binned knots: data_bin_edges / data_bin_weights
     if (data_bin_edges is None) ^ (data_bin_weights is None):

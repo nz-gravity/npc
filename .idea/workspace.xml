@@ -5,37 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a687f44c-982c-410c-adbf-fa2a6a969575" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/npc.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/npc-0.1.dev0+d20250617-py3-none-any.whl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/npc-0.1.dev0+d20250617.tar.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/npc.egg-info/PKG-INFO" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/npc.egg-info/SOURCES.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/npc.egg-info/dependency_links.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/npc.egg-info/requires.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/npc.egg-info/top_level.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/npc/_version.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/npc/logSplines/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/npc/logSplines/knot_allocation.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/npc/logSplines/log_Psplines.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/npc/logSplines/logspline_data.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/npc/logSplines/utils.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/npc/npcor/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/npc/npcor/core.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/npc/npcor/input_test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/npc/npcor/mcmc.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/npc/npcor/sampler.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/npc/npcor/update_weights.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/npc/utils.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_core_fun.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_splines.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/npc/logSplines/knot_allocation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/npc/logSplines/knot_allocation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/npc/npcor/input_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/npc/npcor/input_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/npc/npcor/mcmc.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/npc/npcor/mcmc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/npc/npcor/sampler.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/npc/npcor/sampler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/npc/npcor/update_weights.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/npc/npcor/update_weights.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,8 +76,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-b598e85cdad2-JavaScript-PY-252.25557.130" />
-        <option value="bundled-python-sdk-1bde30d8e611-7b97d883f26b-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.25557.130" />
+        <option value="bundled-js-predefined-d6986cc7102b-b598e85cdad2-JavaScript-PY-252.25557.178" />
+        <option value="bundled-python-sdk-ce6832f46686-7b97d883f26b-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.25557.178" />
       </set>
     </attachedChunks>
   </component>
@@ -182,6 +157,9 @@
       <workItem from="1756788695359" duration="7443000" />
       <workItem from="1756958403415" duration="1532000" />
       <workItem from="1756960457000" duration="400000" />
+      <workItem from="1756981931854" duration="538000" />
+      <workItem from="1756982488189" duration="2620000" />
+      <workItem from="1757036031219" duration="979000" />
     </task>
     <servers />
   </component>

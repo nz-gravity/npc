@@ -22,7 +22,9 @@ class Sampler:
             data_bin_weights: np.ndarray,
             log_data: bool,
             equidistant: bool,
-            thin: int = 1,
+            thin: int ,
+            amh: bool ,
+            covobj:np.ndarray,
     ):
         self.per=np.mean(per, axis=0) if blocked else per
         self.J = per.shape[0] if blocked else 1
@@ -38,7 +40,7 @@ class Sampler:
         self.data_bin_weights = data_bin_weights
         self.log_data = log_data
         self.equidistant = equidistant
-
+        self.amh=amh
         if f is None:
             f = np.linspace(0, self.fs / 2, len(self.per) + 1)[1:]
         self.f = f
@@ -59,6 +61,8 @@ class Sampler:
         self.splineobj.a_delta = 1 + 1e-4
         self.splineobj.count = []
         self.splineobj.n_gridpoints, self.splineobj.n_basis = self.splineobj.splines.shape
+        self.splineobj.Ik = 0.01 * np.diag(np.ones(self.n_weights) / self.n_weights)
+        self.splineobj.covobj = covobj if covobj is not None else np.eye(self.n_weights)
         self.splineobj.sigma = 1
         self.splineobj.accept_frac = 0.4
         self.npsd = np.zeros((n, len(self.per)))  # noise PSD T channel
@@ -116,6 +120,8 @@ class MCMCResult:
         self.knots = sampler.splineobj.knots
         self.iter_ix = np.arange(self.burnin, self.n)[::self.thin]#the iterations after burn-in and thinning
         self.n_kept = len(self.iter_ix)#Number of posterior samples kept after burn-in and thinning
+        self.amh = sampler.amh
+        self.covobj = sampler.splineobj.covobj
 
 
 

@@ -176,7 +176,7 @@ def knot_loc(
     f: np.ndarray,
     data_bin_edges: np.ndarray = None,
     data_bin_weights: np.ndarray = None,
-    log_data: bool = False,
+    log_data: bool = True,
     equidistant: bool = False,
 ) -> np.ndarray:
     """

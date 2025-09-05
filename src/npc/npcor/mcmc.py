@@ -20,9 +20,11 @@ def mcmc(
         blocked: bool = False,
         data_bin_edges: np.ndarray = None,
         data_bin_weights: np.ndarray = None,
-        log_data: bool = False,
+        log_data: bool = True,
         equidistant: bool = False,
         thin: int = 1,
+        amh: bool = False,
+        covobj=None,
 ):
     """
     Function that:
@@ -35,7 +37,7 @@ def mcmc(
         per=per, n=n, n_weights=n_weights, burnin=burnin, Spar=Spar, degree=degree,
         f=f, fs=fs, blocked=blocked, data_bin_edges=data_bin_edges,
         data_bin_weights=data_bin_weights, log_data=log_data,
-        equidistant=equidistant, thin=thin,
+        equidistant=equidistant, thin=thin, amh=amh,
     )
     sampler = Sampler(
         per=per,
@@ -52,6 +54,8 @@ def mcmc(
         log_data=log_data,
         equidistant=equidistant,
         thin=thin,
+        amh=amh,
+        covobj=covobj,
     )
     sampler.MCMCloop()
     return MCMCResult(sampler=sampler)
