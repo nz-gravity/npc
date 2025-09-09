@@ -20,11 +20,11 @@ def mcmc(
         blocked: bool = False,
         data_bin_edges: np.ndarray = None,
         data_bin_weights: np.ndarray = None,
-        log_data: bool = True,
+        log_data: bool = False,
         equidistant: bool = False,
         thin: int = 1,
         amh: bool = False,
-        covobj=None,
+        cov_mat=np.nan,
 ):
     """
     Function that:
@@ -55,7 +55,7 @@ def mcmc(
         equidistant=equidistant,
         thin=thin,
         amh=amh,
-        covobj=covobj,
+        cov_mat=cov_mat,
     )
     sampler.MCMCloop()
     return MCMCResult(sampler=sampler)

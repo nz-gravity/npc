@@ -24,7 +24,7 @@ class Sampler:
             equidistant: bool,
             thin: int ,
             amh: bool ,
-            covobj:np.ndarray,
+            cov_mat,
     ):
         self.per=np.mean(per, axis=0) if blocked else per
         self.J = per.shape[0] if blocked else 1
@@ -61,8 +61,11 @@ class Sampler:
         self.splineobj.a_delta = 1 + 1e-4
         self.splineobj.count = []
         self.splineobj.n_gridpoints, self.splineobj.n_basis = self.splineobj.splines.shape
-        self.splineobj.Ik = 0.01 * np.diag(np.ones(self.n_weights) / self.n_weights)
-        self.splineobj.covobj = covobj if covobj is not None else np.eye(self.n_weights)
+        self.splineobj.beta_cov=0.05
+        self.splineobj.const=(2.38**2)/self.n_weights
+        self.splineobj.covobj = {'mean': self.splineobj.lam_mat[0, :], 'cov': cov_mat, 'n': 1}
+        self.splineobj.Ik = (0.1)**2*np.diag(np.ones(self.n_weights) / self.n_weights)
+        #self.splineobj.covobj = covobj if covobj is not None else np.eye(self.n_weights)
         self.splineobj.sigma = 1
         self.splineobj.accept_frac = 0.4
         self.npsd = np.zeros((n, len(self.per)))  # noise PSD T channel

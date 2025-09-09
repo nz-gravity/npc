@@ -108,3 +108,29 @@ def s_ar4(a1, a2, a3, a4, sig2, f):
 def s_ar2(a1, a2, sig2, f):
     #AR2 spectrum
     return sig2 / (1 + a1**2 + a2**2 + 2 * a1 * (a2 - 1) * np.cos(2 * np.pi * f) - 2 * a2 * np.cos(4 * np.pi * f))
+
+def updateCov(X, covObj=np.nan):
+    if not isinstance(covObj, dict):  # np.isnan(covObj):
+        covObj = {'mean': X, 'cov': np.nan, 'n': 1}
+        return covObj
+
+    covObj['n'] = covObj['n'] + 1
+
+    X1 = np.asmatrix(covObj['mean'])
+    X = np.asmatrix(X)
+
+    if covObj['n'] == 2:
+        covObj['mean'] = X1 / 2 + X / 2
+        dX1 = X1 - covObj['mean']
+        dX2 = np.subtract(X, covObj['mean'])
+        dX1 = np.asmatrix(dX1)
+        dX2 = np.asmatrix(dX2)
+        covObj['cov'] = np.add(np.matmul(dX1.transpose(), dX1), np.matmul(dX2.transpose(), dX2))
+        return covObj
+
+    dx = X1 - X  # previous mean minus new X
+    dx = np.asmatrix(dx)
+    covObj['cov'] = covObj['cov'] * (covObj['n'] - 2) / (covObj['n'] - 1) + \
+                    np.matmul(dx.transpose(), dx) / covObj['n']
+    covObj['mean'] = X1 * (covObj['n'] - 1) / covObj['n'] + X / covObj['n']
+    return covObj

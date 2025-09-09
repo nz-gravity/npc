@@ -1,6 +1,7 @@
 import numpy as np
 from .core import post_calc
 from scipy.stats import multivariate_normal
+from npc.utils import updateCov
 """This file contains the functions to update the weights (lambda) in the MCMC sampler."""
 
 
@@ -53,9 +54,10 @@ def update_lambda_mh(obj,i):
     ) = lambda_loop(obj, i=i-1)
 
 def get_lamstar(obj,lam,i):
-        if  i <= 50*obj.n_weights:
+        u=np.random.rand()
+        if  (i <= 50*obj.n_weights) or (u<0.05):
              return multivariate_normal.rvs(mean=lam, cov=obj.splineobj.Ik , size=1)
-        return multivariate_normal.rvs(mean=lam, cov=obj.splineobj.covobj, size=1)
+        return multivariate_normal.rvs(mean=lam, cov=obj.splineobj.const*obj.splineobj.covobj['cov'], size=1)
 
 def lambda_amh_loop(obj,i):
     #loop to update lambda using amh
@@ -75,12 +77,11 @@ def lambda_amh_loop(obj,i):
 def update_lambda_amh(obj, i, epsilon=1e-11, adaptation_delay=100, adapt_every=10):
     #function to update lambda
     obj.splineobj.lam_mat[i, :]=lambda_amh_loop(obj, i=i-1)
-    if (i > adaptation_delay) and (i % adapt_every == 0):
-        samples_so_far = obj.splineobj.lam_mat[:i + 1, :]
-        cov_emp = np.cov(samples_so_far, rowvar=False)
-        # scale by 2.38^2/d, add epsilon I
-        # scale = 2.38 ** 2 / dim
-        obj.splineobj.covobj = cov_emp + epsilon * np.eye(obj.n_weights)
+    obj.splineobj.covobj=updateCov(X=obj.splineobj.lam_mat[i, :], covObj=obj.splineobj.covobj)
+    #if (i > adaptation_delay) and (i % adapt_every == 0):
+    #    samples_so_far = obj.splineobj.lam_mat[:i + 1, :]
+    #    cov_emp = np.cov(samples_so_far, rowvar=False)
+    #    obj.splineobj.covobj = cov_emp + epsilon * np.eye(obj.n_weights)
 
 
 

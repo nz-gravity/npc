@@ -176,7 +176,7 @@ def knot_loc(
     f: np.ndarray,
     data_bin_edges: np.ndarray = None,
     data_bin_weights: np.ndarray = None,
-    log_data: bool = True,
+    log_data: bool = False,
     equidistant: bool = False,
 ) -> np.ndarray:
     """
@@ -204,9 +204,9 @@ def knot_loc(
         data = pdgrm/Spar  # ratio
 
     if data_bin_edges is None:
+        knots=m * data_peak_knots(data=data, n_knots=n_knots, log_data=log_data)+ c
         return (
-            m * data_peak_knots(data=data, n_knots=n_knots, log_data=log_data)
-            + c
+            knots
         )
     else:
         return (

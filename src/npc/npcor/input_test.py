@@ -76,7 +76,7 @@ def input_test(
         raise ValueError(f"`n_weights` must be a positive integer, got {n_weights}.")
 
     # burnin
-    if not _is_pos_int(burnin):
+    if not _is_int(burnin) and burnin >= 0:
         raise ValueError(f"`burnin` must be a positive integer, got {burnin}.")
     if burnin >= n:
         raise ValueError(f"`burnin` ({burnin}) must be < `n` ({n}).")
