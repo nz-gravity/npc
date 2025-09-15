@@ -195,8 +195,7 @@ def knot_loc(
     m = max(f) - min(f)
     c = min(f)
     if equidistant:
-        return np.geomspace(min(f), max(f), num=int(n_knots - 2))
-    n_knots = n_knots - degree + 1
+        return np.geomspace(min(f), max(f), num=int(n_knots))
 
     data = np.log(pdgrm) - np.log(Spar)
 

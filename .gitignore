@@ -40,6 +40,10 @@ MANIFEST
 /tests/simul_lisa_test.py
 /tests/simulationstudy.py
 /tests/cov_mat.py
+/tests/lisa_test.ipynb
+/tests/data/
+/tests/lisa_demo.png
+/tests/paper_plots.ipynb
 # (optional) also ignore notebook checkpoints
 **/.ipynb_checkpoints/
 

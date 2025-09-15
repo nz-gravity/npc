@@ -11,7 +11,7 @@ class Sampler:
             self,
             per: np.ndarray,
             n: int,
-            n_weights: int,
+            n_knots: int,
             burnin: int,
             Spar: np.ndarray,
             degree: int,
@@ -30,7 +30,8 @@ class Sampler:
         self.J = per.shape[0] if blocked else 1
         self.n = n
         self.thin = thin
-        self.n_weights = n_weights
+        self.n_weights = n_knots + degree - 1#for third order splines, num_coeffs = num_knots + 2
+        self.n_knots = n_knots
         self.burnin = burnin
         self.Spar = Spar
         self.degree = degree
@@ -48,7 +49,8 @@ class Sampler:
             data=self.per,
             Spar=self.Spar,
             n=self.n,
-            n_knots=self.n_weights,
+            n_knots=self.n_knots,
+            n_weights=self.n_weights,
             degree=self.degree,
             f=self.f,
             data_bin_edges=self.data_bin_edges,
@@ -57,7 +59,7 @@ class Sampler:
             equidistant=self.equidistant,
         )
         self.splineobj = logPsplines(dataobj=dataobj_x)
-        self.splineobj.a_phi = n_weights / 2 + 1
+        self.splineobj.a_phi = self.n_weights / 2 + 1
         self.splineobj.a_delta = 1 + 1e-4
         self.splineobj.count = []
         self.splineobj.n_gridpoints, self.splineobj.n_basis = self.splineobj.splines.shape

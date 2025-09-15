@@ -37,14 +37,14 @@ class logPsplines:
         )
         self.n_gridpoints, self.n_basis = self.splines.shape
         self.P = panelty_mat(
-            d=1, knots=self.knots, degree=dataobj.degree, k=dataobj.n_knots,
+            d=1, knots=self.knots, degree=dataobj.degree, k=dataobj.n_weights,
         )
         lam = dataobj.data / np.sum(dataobj.data)
         lam = lam[
-            np.round(np.linspace(0, len(lam) - 1, dataobj.n_knots)).astype(int)
+            np.round(np.linspace(0, len(lam) - 1, dataobj.n_weights)).astype(int)
         ]
         lam[lam == 0] = 1e-50
-        self.lam_mat = np.zeros((dataobj.n, dataobj.n_knots))
+        self.lam_mat = np.zeros((dataobj.n, dataobj.n_weights))
         self.lam_mat[0, :] = lam
         self.delta = np.zeros(dataobj.n)
         self.phi = np.zeros(dataobj.n)
@@ -53,7 +53,7 @@ class logPsplines:
         )  # splines PSD
         self.delta[0] = 1
         self.phi[0] = 1
-        self.a_phi = dataobj.n_knots / 2 + 1
+        self.a_phi = dataobj.n_weights / 2 + 1
         self.a_delta = 1 + 1e-4
         self.sigma = 1
         self.accept_frac = 0.4

@@ -11,7 +11,7 @@ This file contains the function that runs the MCMC.
 def mcmc(
         per: np.ndarray,
         n: int,
-        n_weights: int,
+        n_knots: int,
         burnin: int,
         Spar: np.ndarray = 1,
         degree: int = 3,
@@ -34,7 +34,7 @@ def mcmc(
       4) Returns the results.
     """
     input_test(
-        per=per, n=n, n_weights=n_weights, burnin=burnin, Spar=Spar, degree=degree,
+        per=per, n=n, n_knots=n_knots, burnin=burnin, Spar=Spar, degree=degree,
         f=f, fs=fs, blocked=blocked, data_bin_edges=data_bin_edges,
         data_bin_weights=data_bin_weights, log_data=log_data,
         equidistant=equidistant, thin=thin, amh=amh,
@@ -42,7 +42,7 @@ def mcmc(
     sampler = Sampler(
         per=per,
         n=n,
-        n_weights=n_weights,
+        n_knots=n_knots,
         burnin=burnin,
         Spar=Spar,
         degree=degree,

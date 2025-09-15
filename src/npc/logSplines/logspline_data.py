@@ -10,6 +10,7 @@ class LogSplineData:
         Spar,
         n,
         n_knots,
+        n_weights,
         degree,
         f,
         data_bin_edges,
@@ -27,3 +28,4 @@ class LogSplineData:
         self.data_bin_weights = data_bin_weights
         self.log_data = log_data
         self.equidistant = equidistant
+        self.n_weights = n_weights
