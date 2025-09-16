@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a687f44c-982c-410c-adbf-fa2a6a969575" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/LISA_demo.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/npc/logSplines/knot_allocation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/npc/logSplines/knot_allocation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/npc/logSplines/log_Psplines.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/npc/logSplines/log_Psplines.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/npc/logSplines/logspline_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/npc/logSplines/logspline_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/npc/npcor/input_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/npc/npcor/input_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/npc/npcor/mcmc.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/npc/npcor/mcmc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/npc/npcor/sampler.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/npc/npcor/sampler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/LISA_demo.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/tests/LISA_demo.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +62,7 @@
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/naim769/PycharmProjects/npc&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -222,6 +216,8 @@
       <workItem from="1757813435475" duration="1134000" />
       <workItem from="1757814582533" duration="3303000" />
       <workItem from="1757818068353" duration="10554000" />
+      <workItem from="1757984590882" duration="3476000" />
+      <workItem from="1757988097938" duration="1753000" />
     </task>
     <servers />
   </component>
