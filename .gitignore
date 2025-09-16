@@ -43,7 +43,7 @@ MANIFEST
 /tests/lisa_test.ipynb
 /tests/data/
 /tests/lisa_demo.png
-/tests/paper_plots.ipynb
+/tests/iae_distribution.pdf
 # (optional) also ignore notebook checkpoints
 **/.ipynb_checkpoints/
 
