@@ -44,6 +44,9 @@ MANIFEST
 /tests/data/
 /tests/lisa_demo.png
 /tests/iae_distribution.pdf
+/src/npc.egg-info
+/dist/
+*.idea/
 # (optional) also ignore notebook checkpoints
 **/.ipynb_checkpoints/
 
