@@ -66,6 +66,7 @@ class Sampler:
         self.splineobj.beta_cov=0.05
         self.splineobj.const=(2.38**2)/self.n_weights
         self.splineobj.covobj = {'mean': self.splineobj.lam_mat[0, :], 'cov': cov_mat, 'n': 1}
+        self.splineobj.usercov=True if cov_mat is not None else False
         self.splineobj.Ik = (0.1)**2*np.diag(np.ones(self.n_weights) / self.n_weights)
         #self.splineobj.covobj = covobj if covobj is not None else np.eye(self.n_weights)
         self.splineobj.sigma = 1

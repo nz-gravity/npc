@@ -54,6 +54,9 @@ def update_lambda_mh(obj,i):
     ) = lambda_loop(obj, i=i-1)
 
 def get_lamstar(obj,lam,i):
+        if obj.splineobj.usercov and (i < 50):
+            return multivariate_normal.rvs(mean=lam, cov=obj.splineobj.covobj['cov'], size=1)
+
         u=np.random.rand()
         if  (i <= 50*obj.n_weights) or (u<0.05):
              return multivariate_normal.rvs(mean=lam, cov=obj.splineobj.Ik , size=1)
@@ -77,6 +80,9 @@ def lambda_amh_loop(obj,i):
 def update_lambda_amh(obj, i, epsilon=1e-11, adaptation_delay=100, adapt_every=10):
     #function to update lambda
     obj.splineobj.lam_mat[i, :]=lambda_amh_loop(obj, i=i-1)
+    if obj.splineobj.usercov and i<50:
+        return  # no adaptation during the first 50 iterations
+    obj.splineobj.covobj['n'] = i
     obj.splineobj.covobj=updateCov(X=obj.splineobj.lam_mat[i, :], covObj=obj.splineobj.covobj)
     #if (i > adaptation_delay) and (i % adapt_every == 0):
     #    samples_so_far = obj.splineobj.lam_mat[:i + 1, :]
