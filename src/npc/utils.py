@@ -46,10 +46,14 @@ def uniformmax(sample):
 def cent_series(series):
     return ((series - np.mean(series)) / np.std(series))
 
+def _absdiff(a,b):
+    return abs(a-b)
 
 def compute_iae(psd, truepsd, upper, lower):  # note use PSD not log PSD
-    return sum(abs(psd - truepsd)) * (upper-lower) / len(truepsd)
+    return sum(_absdiff(psd,truepsd)) * (upper-lower) / len(truepsd)
 
+def compute_rel_iae(psd, truepsd, upper, lower):  # note use PSD not log PSD
+    return sum(_absdiff(psd,truepsd)/truepsd) * (upper-lower) / len(truepsd)
 
 def compute_prop(u05, u95, truepsd):
     v = []

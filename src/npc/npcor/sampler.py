@@ -25,6 +25,8 @@ class Sampler:
             thin: int ,
             amh: bool ,
             cov_mat,
+            mean_w: np.ndarray,
+            num_iter_amh,
     ):
         self.per=np.mean(per, axis=0) if blocked else per
         self.J = per.shape[0] if blocked else 1
@@ -65,8 +67,10 @@ class Sampler:
         self.splineobj.n_gridpoints, self.splineobj.n_basis = self.splineobj.splines.shape
         self.splineobj.beta_cov=0.05
         self.splineobj.const=(2.38**2)/self.n_weights
-        self.splineobj.covobj = {'mean': self.splineobj.lam_mat[0, :], 'cov': cov_mat, 'n': 1}
-        self.splineobj.usercov=True if cov_mat is not None else False
+        self.splineobj.usercov = not np.all(np.isnan(cov_mat))
+        if self.splineobj.usercov:
+            self.splineobj.lam_mat[0, :]=mean_w#starting with the coefficients provided
+        self.splineobj.covobj = {'mean': self.splineobj.lam_mat[0, :], 'cov': cov_mat, 'n': num_iter_amh}
         self.splineobj.Ik = (0.1)**2*np.diag(np.ones(self.n_weights) / self.n_weights)
         #self.splineobj.covobj = covobj if covobj is not None else np.eye(self.n_weights)
         self.splineobj.sigma = 1

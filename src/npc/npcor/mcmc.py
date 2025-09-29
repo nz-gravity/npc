@@ -25,6 +25,8 @@ def mcmc(
         thin: int = 1,
         amh: bool = False,
         cov_mat=np.nan,
+        mean_w=None,
+        num_iter_amh=1,
 ):
     """
     Function that:
@@ -56,6 +58,8 @@ def mcmc(
         thin=thin,
         amh=amh,
         cov_mat=cov_mat,
+        mean_w=mean_w,
+        num_iter_amh=num_iter_amh,
     )
     sampler.MCMCloop()
     return MCMCResult(sampler=sampler)
