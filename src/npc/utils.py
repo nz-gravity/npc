@@ -56,7 +56,7 @@ def compute_iae(psd, truepsd, upper, lower):  # note use PSD not log PSD
     return sum(_absdiff(psd,truepsd)) * _const(a=upper,b=lower,n=len(truepsd))
 
 def compute_rel_iae(psd, truepsd, upper, lower):  # note use PSD not log PSD
-    return sum(_absdiff(psd,truepsd)/truepsd) * _const(a=upper,b=lower,n=len(truepsd))
+    return sum(_absdiff(psd,truepsd))/sum(truepsd)
 
 def compute_prop(u05, u95, truepsd):
     v = []
